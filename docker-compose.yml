@@ -2,11 +2,11 @@ version: "3.4"
 
 services:
   client:
-    build: .
-    command: npm run serve
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm run dev --host
     ports:
-      - "8080:8080"
-    expose:
-      - "8080"
+      - "5173:5173"
     volumes:
       - ./app:/app
